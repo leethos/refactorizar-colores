@@ -26,7 +26,11 @@ public class RefactorizarColores {
      */
     public static void main(String[] args) {
         DDLoggerInterface logger;
-        testOperatingSystem();
+        
+        if(!checkLinux()){
+            System.err.println("Este programa no puede ejecutarse en sistemas operativo inferiores");
+            System.exit(1);
+        }
         
         logger=initializeLogFiles();
 
@@ -37,7 +41,8 @@ public class RefactorizarColores {
     }
 
     public static void setDefaultColor() {
-        int r,g,b,a;
+         int r,g,b,a;
+        
          r = preferences.getInt(CURTAIN_R, 0);
          g = preferences.getInt(CURTAIN_G, 0);
          b = preferences.getInt(CURTAIN_B, 0);
@@ -70,16 +75,14 @@ public class RefactorizarColores {
         return logger;
     }
 
-    public static void testOperatingSystem() {
+    public static boolean checkLinux() {
         // (1) comprobar el sistema Operativo y asegurarnos qeu solo funciona en linux
         boolean mrjVersionExists = System.getProperty("mrj.version") != null;
         boolean osNameExists = System.getProperty("os.name").startsWith("linux");
         
-        if ( !mrjVersionExists || !osNameExists)
-        {
-            System.err.println("Este programa no puede ejecutarse en sistemas operativo inferiores");
-            System.exit(1);
-        }
+        
+        return !(!mrjVersionExists || !osNameExists);
+        
     }
     
 }
