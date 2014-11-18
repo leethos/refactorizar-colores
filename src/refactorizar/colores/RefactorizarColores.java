@@ -83,7 +83,7 @@ public class RefactorizarColores {
         boolean mrjVersionExists = System.getProperty("mrj.version") != null;
         boolean osNameExists = System.getProperty("os.name").startsWith("linux");
         
-        
+        //se quita el if y la condicion se lo que se devuelve
         return !(!mrjVersionExists || !osNameExists);
         
     }
