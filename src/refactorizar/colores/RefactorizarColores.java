@@ -20,13 +20,16 @@ import xtra.classes.DDSimpleLogger;
 public class RefactorizarColores {
     private static Color currentColor;
     private static Preferences preferences;
-
+    private static String CURTAIN_R;
+    private static String CURTAIN_G;
+    private static String CURTAIN_B;
+    private static String CURTAIN_A;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DDLoggerInterface logger;
-        
+        //DDLoggerInterface logger;
+        DDSimpleLogger logger;
         if(!checkLinux()){
             System.err.println("Este programa no puede ejecutarse en sistemas operativo inferiores");
             System.exit(1);
@@ -55,8 +58,8 @@ public class RefactorizarColores {
         preferences = Preferences.userNodeForPackage(this.getClass());
     }
 
-    public static DDLoggerInterface initializeLogFiles() {
-        DDLoggerInterface logger;
+    public static DDSimpleLogger initializeLogFiles() {
+        DDSimpleLogger logger;
         // (2) inicializar ficheros de log
         int DEFAULT_LOG_LEVEL = 0;
         int currentLoggingLevel = DEFAULT_LOG_LEVEL;
