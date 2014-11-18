@@ -10,7 +10,7 @@ package xtra.classes;
  *
  * @author lgarcia
  */
-class DDSimpleLogger {
+public class DDSimpleLogger {
 
     public DDSimpleLogger(String CANON_DEBUG_FILENAME, int currentLoggingLevel, boolean b, boolean b0) {
     }

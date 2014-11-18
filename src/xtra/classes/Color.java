@@ -10,12 +10,12 @@ package xtra.classes;
  *
  * @author lgarcia
  */
-class Color {
+public class Color {
+
+ /*   public Color(int r, int g, int b, int a) {
+    }*/
 
     public Color(int r, int g, int b, int a) {
-    }
-
-    Color(int r, int g, int b, int a) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

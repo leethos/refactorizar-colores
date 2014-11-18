@@ -10,7 +10,7 @@ package xtra.classes;
  *
  * @author lgarcia
  */
-class DDLoggerInterface {
+public class DDLoggerInterface {
     static int LOG_ERROR;
     static int LOG_WARNING;
     
